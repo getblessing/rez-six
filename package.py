@@ -9,9 +9,12 @@ requires = []
 
 variants = []
 
+pip_packages = [
+    "six==1.15.0",
+]
 
-private_build_requires = ["rezutil-1", "pipz"]
-build_command = "python -m rezutil build {root} --use-pipz"
+private_build_requires = ["pipz"]
+build_command = "install %s --bundle" % " ".join(pip_packages)
 
 
 def commands():
